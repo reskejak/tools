@@ -1,22 +1,28 @@
 # tools
 Short scripts for various bioinformatics purposes
 
+#### Installation
+
+1. Clone or copy raw code to text editor.
+2. Make executable, i.e. `chmod u+x removeChrom`
+
+
 ### removeChrom
 
-simple bash script to remove chromosomal reads from bam file
+Simple bash script to remove chromosomal reads from bam file.
 
-usage: removeChrom chr10 input.bam
+##### Usage: removeChrom chr10 input.bam
 
-command idea based on https://www.biostars.org/p/128967/
+Command idea based on [this Biostars thread](https://www.biostars.org/p/128967/).
 
-script format based on https://gist.github.com/taoliu/2469050
+Script format based on [Tao Liu's bdg2bw](https://gist.github.com/taoliu/2469050).
 
 ### removeChromSam
 
-simple bash script to remove chromosomal reads from bam file (output as sam)
+Simple bash script to remove chromosomal reads from bam file (output as sam).
 
-usage: removeChrom chr10 input.bam
+##### Usage: removeChrom chr10 input.bam
 
-command idea based on https://www.biostars.org/p/128967/
+Command idea based on [this Biostars thread](https://www.biostars.org/p/128967/).
 
-script format based on https://gist.github.com/taoliu/2469050
+Script format based on [Tao Liu's bdg2bw](https://gist.github.com/taoliu/2469050).
