@@ -9,7 +9,7 @@
 # reskejak@msu.edu
 # https://github.com/reskejak
 
-# simple script to remove chromosomal reads from bam file (output as sam)
+# simple script to remove reads from a specific chromosome from a bam file (output as sam)
 # usage: removeChromSam chr10 input.bam
 
 # command idea based on https://www.biostars.org/p/128967/
