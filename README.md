@@ -12,6 +12,8 @@ Short scripts for various bioinformatics purposes.
 
 Simple bash script to remove chromosomal reads from bam file.
 
+Dependencies: [samtools](http://samtools.sourceforge.net/).
+
 ##### Usage: removeChrom chr10 input.bam
 
 Command idea based on [this Biostars thread](https://www.biostars.org/p/128967/). Script format based on [Tao Liu's bdg2bw](https://gist.github.com/taoliu/2469050).
@@ -19,6 +21,8 @@ Command idea based on [this Biostars thread](https://www.biostars.org/p/128967/)
 ### removeChromSam
 
 Simple bash script to remove chromosomal reads from bam file (output as sam).
+
+Dependencies: [samtools](http://samtools.sourceforge.net/).
 
 ##### Usage: removeChrom chr10 input.bam
 
