@@ -3,7 +3,7 @@ Short scripts for various bioinformatics purposes
 
 ### removeChrom
 
-simple script to remove chromosomal reads from bam file
+simple bash script to remove chromosomal reads from bam file
 
 usage: removeChrom chr10 input.bam
 
@@ -13,7 +13,7 @@ script format based on https://gist.github.com/taoliu/2469050
 
 ### removeChromSam
 
-simple script to remove chromosomal reads from bam file (output as sam)
+simple bash script to remove chromosomal reads from bam file (output as sam)
 
 usage: removeChrom chr10 input.bam
 
