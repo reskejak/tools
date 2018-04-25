@@ -24,6 +24,6 @@ Simple bash script to remove reads from a specific chromosome from a bam file (o
 
 Dependencies: [samtools](http://samtools.sourceforge.net/).
 
-##### Usage: removeChrom chr10 input.bam
+##### Usage: removeChromSam chr10 input.bam
 
 Command idea based on [this Biostars thread](https://www.biostars.org/p/128967/). Script format based on [Tao Liu's bdg2bw](https://gist.github.com/taoliu/2469050).
