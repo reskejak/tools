@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # generating genome.fa mappability track
 # see https://www.biostars.org/p/181014/ for explanation
 
