@@ -1,5 +1,5 @@
 # tools
-Short scripts for various bioinformatics purposes.
+Short scripts for various bioinformatics applications.
 
 #### Installation
 
