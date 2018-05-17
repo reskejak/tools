@@ -4,9 +4,9 @@ Short scripts for various bioinformatics applications.
 #### Installation
 
 1. Clone or copy raw code to text editor.
-2. Make executable, i.e. `chmod u+x removeChrom`.
-3. Call script via installation dir, i.e. `./removeChrom` or `/home/usr/bin/removeChrom`, or alternatively...
-4. (Optional) **Carefully** add installation dir to PATH, i.e. `export PATH=$PATH:/home/usr/bin` and call anywhere via simply `removeChrom`.
+2. Make executable, e.g. `chmod u+x removeChrom`.
+3. Call script via installation dir, e.g. `./removeChrom` or `/home/usr/bin/removeChrom`, or alternatively...
+4. (Optional) **Carefully** add installation dir to PATH, e.g. `export PATH=$PATH:/home/usr/bin` and call anywhere via simply `removeChrom`.
 
 ### removeChrom
 
