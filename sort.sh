@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # sort each row of integers horizontally by increasing value
 # example application: consolidating genomic coordinates of forward and reverse reads (firstly requires sorting of coordinates)
 # source: https://www.unix.com/shell-programming-and-scripting/180835-sort-each-row-horizontally-awk-any.html
