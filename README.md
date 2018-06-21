@@ -10,9 +10,7 @@ Short scripts for various bioinformatics applications.
 
 ### removeChrom
 
-Simple bash script to remove reads from a specific chromosome from a bam file.
-
-Dependencies: [samtools](http://samtools.sourceforge.net/).
+Simple bash script to remove reads from a specific chromosome from a bam file. Dependencies: [samtools](http://samtools.sourceforge.net/).
 
 Usage: `removeChrom chr10 input.bam`
 
@@ -20,9 +18,7 @@ Command idea based on [this Biostars thread](https://www.biostars.org/p/128967/)
 
 ### removeChromSam
 
-Simple bash script to remove reads from a specific chromosome from a bam file (output as sam).
-
-Dependencies: [samtools](http://samtools.sourceforge.net/).
+Simple bash script to remove reads from a specific chromosome from a bam file (output as sam). Dependencies: [samtools](http://samtools.sourceforge.net/).
 
 Usage: `removeChromSam chr10 input.bam`
 
