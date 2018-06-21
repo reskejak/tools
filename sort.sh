@@ -1,11 +1,22 @@
 #!/bin/bash
 
+##########################
+
+# sort.sh
+# May 2018
+# Jake Reske
+# Michigan State University
+# reskejak@msu.edu
+# https://github.com/reskejak
+
 # sort each row of integers horizontally by increasing value
-# example application: consolidating genomic coordinates of forward and reverse reads (firstly requires sorting of coordinates)
+# usage: bash sort.sh coords.bed > coords.sorted.bed
+
+# example application: consolidating genomic coordinates of forward and reverse reads (firstly requires read sorting)
 # specific application: converting standard BEDPE files to minimal format for macs2
 # source: https://www.unix.com/shell-programming-and-scripting/180835-sort-each-row-horizontally-awk-any.html
 
-# usage: bash sort.sh coords.bed > coords.sorted.bed
+############################
 
 while read line; do
       ary=(${line})
