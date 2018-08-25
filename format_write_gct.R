@@ -28,6 +28,8 @@ format.gct <- function(x){
 
 ##############################
 # expand this function to further automate subsequent write.table export
+# x = input matrix
+# y = optional filename, defaults to <input>.gct
 write.gct <- function(x, y=NULL){
   if(is.null(y)) y = paste0(deparse(substitute(x)),".gct") # deparse(substitute(x)) assigns "x", i.e. name of input variable
   x <- cbind(rownames(x),
