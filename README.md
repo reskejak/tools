@@ -8,6 +8,11 @@ Short scripts for various bioinformatics applications.
 3. Call script via installation dir, e.g. `./removeChrom` or `/home/usr/bin/removeChrom`, or alternatively...
 4. (Optional) **Carefully** add installation dir to PATH, e.g. `export PATH=$PATH:/home/usr/bin` and call anywhere via simply `removeChrom`.
 
+### format_write_gct.R
+
+R functions to automate Broad GCT format generation, for downstream use with Broad GSEA functions via GenePattern, etc.
+For more details: [Broad GenePattern File Formats Guide](http://software.broadinstitute.org/cancer/software/genepattern/file-formats-guide)
+
 ### removeChrom
 
 Simple bash script to remove reads from a specific chromosome from a bam file. Dependencies: [samtools](http://samtools.sourceforge.net/).
