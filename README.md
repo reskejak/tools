@@ -11,7 +11,14 @@ Short scripts for various bioinformatics applications.
 ### format_write_gct.R
 
 R functions to automate Broad GCT format generation, for downstream use with Broad GSEA functions via GenePattern, etc.
+
 For more details: [Broad GenePattern File Formats Guide](http://software.broadinstitute.org/cancer/software/genepattern/file-formats-guide)
+
+Input is a matrix with genes as rownames and samples as colnames.
+
+`format.gct()` usage:  `format.gct(primary_tumors_matrix)`
+
+`write.gct()` usage: `write.gct(primary_tumors_matrix, "primary_tumors.gct")` or simply `write.gct(primary_tumors_matrix)`
 
 ### removeChrom
 
