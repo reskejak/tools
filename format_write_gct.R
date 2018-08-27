@@ -24,7 +24,7 @@ format.gct <- function(x){
         colnames(x),
         x)
 }
-# output variable can be exported via write.table (sep="\t", quote=F, row.names=F, col.names=F
+# output variable can be exported via write.table (sep="\t", quote=F, row.names=F, col.names=F)
 
 ##############################
 # expand this function to further automate subsequent write.table export
