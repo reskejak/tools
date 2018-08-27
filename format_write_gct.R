@@ -16,6 +16,7 @@ format.gct <- function(x){
   x <- cbind(rownames(x),
              "NA",
              x)
+  colnames(x)[1:2] <- c("NAME", "Description")
   rbind(c("#1.2", 
           rep("", ncol(x)-1)),
         c(nrow(x), 
@@ -35,6 +36,7 @@ write.gct <- function(x, y=NULL){
   x <- cbind(rownames(x),
              "NA",
              x)
+  colnames(x)[1:2] <- c("NAME", "Description")
   x <- rbind(c("#1.2", 
                rep("", ncol(x)-1)),
              c(nrow(x), 
