@@ -29,12 +29,12 @@ for (p in 1:ncol(data)) {
     fit <- glm(x,
                data=data[train,],
                family=binomial())
-    # predict on test data (note: type="prob" used for binary classifier)
+    # predict on test data
     pred <- predict(fit,
-data[-train,], 
-type = "response")
+                    data[-train,], 
+                    type = "response")
     pr <- prediction(pred,
-   data[-train,]$classifier)
+                     data[-train,]$classifier)
     auc <- performance(pr, measure = "auc")@y.values[[1]]
     # iterative sampling calculation of mean AUC
     n = n + 1
