@@ -1,6 +1,10 @@
+# binary_classifier_iterative_feature_ROC_sampling.R
+
 # Jake Reske
 # Michigan State University
 # December 2018
+
+# Initially intended for determining robust transcriptional biomarkers (e.g. pathway ssGSEA score) of binary genetic status in TCGA data with low sample size.
 
 # Let 'data' be an mxn matrix (data frame) with m samples and n features, where 'classifier' is a binary classifier for genetic status of a gene: mutated (1) or wild-type (0), determined from mutation data. 
 # We can iteratively sample training and test data subsets for model training and ROC evaluation until convergence to compensate for low sample size. 
