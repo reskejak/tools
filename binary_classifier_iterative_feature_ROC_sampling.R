@@ -10,6 +10,7 @@
 # We can iteratively sample training and test data subsets for model training and ROC evaluation until convergence to compensate for low sample size. 
 # This framework can be further iterated over each feature to compare model performance and determine optimal predictors.
 
+library(ROCR)
 # reset loop output data frame
 res=data.frame(rep(0,ncol(data)))
 rownames(res)=colnames(data)
