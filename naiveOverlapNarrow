@@ -1,0 +1,33 @@
+#!/bin/bash
+
+##########################
+
+# naiveOverlapNarrow
+# November 2019
+# Jake Reske
+# Michigan State University
+# reskejak@msu.edu
+# https://github.com/reskejak
+
+# Computing ENCODE-defined naive overlapping narrowPeak set from two ATAC or ChIP individual replicate narrowPeak and replicate-pooled narrowPeak sets
+# Definition from Kundaje et al.: "Find pooled peaks that overlap Rep1 and Rep2 where overlap is defined as the fractional overlap wrt any one of the overlapping peak pairs >= 0.5".
+# usage: naiveOverlapNarrow treat1_peaks.narrowPeak treat2_peaks.narrowPeak treat_pool_peaks.narrowPeak > treat_overlap_peaks.narrowPeak
+# ensure to firstly make executable by: chmod u+x naiveOverlapNarrow
+
+# dependencies: bedtools (for intersectBed / bedtools intersect)
+
+##########################
+
+REP1=$1
+REP2=$2
+POOL=$3
+
+# narrowPeak
+intersectBed -wo \
+-a ${POOL} -b ${REP1} | \
+awk 'BEGIN{FS="\t";OFS="\t"}{s1=$3-$2; s2=$13-$12; if (($21/s1 >= 0.5) || ($21/s2 >= 0.5)) {print $0}}' | \
+cut -f 1-10 | sort | uniq | \
+intersectBed -wo \
+-a stdin -b ${REP2} | \
+awk 'BEGIN{FS="\t";OFS="\t"}{s1=$3-$2; s2=$13-$12; if (($21/s1 >= 0.5) || ($21/s2 >= 0.5)) {print $0}}' | \
+cut -f 1-10 | sort | uniq
