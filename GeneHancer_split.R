@@ -14,10 +14,9 @@
 
 # import GeneHancer (v4.4) database (n=218,177 enhancers)
 # download database via GeneCards: https://www.genecards.org/GeneHancer_version_4-4
-genehancer <- read.table("/Users/jakereske/Google Drive/Chandler/public_datasets/GeneHancer_version_4-4.txt",
-                         sep="\t", header=T)
+genehancer <- read.table("~/GeneHancer_version_4-4.txt", sep="\t", header=T)
 
-# loop in serial iterations of 1,000 rows
+# prepare loop
 iters <- ceiling(nrow(genehancer)/1000) # round up
 genehancer.split <- data.frame(chrom=NA, source=NA, feature.name=NA, start=NA, end=NA, score=NA, strand=NA, frame=NA,
                                genehancer_id=NA, connected_gene=NA, connected_gene_score=NA)
@@ -38,7 +37,6 @@ for (n in 1:iters) {
                                            genehancer_id=strsplit(atts[1], split="=")[[1]][2], 
                                            connected_gene=strsplit(atts[-1][(1+((j-1)*2))], split="=")[[1]][2],
                                            connected_gene_score=strsplit(atts[-1][(2+((j-1)*2))], split="=")[[1]][2]))
-      genehancer.split.iter <- genehancer.split.iter[-1,] # remove initilization row
     }
   }
   genehancer.split.iter <- genehancer.split.iter[-1,] # remove initilization row
@@ -46,11 +44,8 @@ for (n in 1:iters) {
                             genehancer.split.iter)
 }
 genehancer.split <- genehancer.split[-1,] # remove initilization row
-# write.table(genehancer.split, file="GeneHancer_version_4-4_split.txt")
- 
-genehancer.split <- GRanges(genehancer.split) # make GRanges object
-# genehancer.split[!duplicated(genehancer.split)] # gut check: X unique ranges
- 
+# write.table(genehancer.split, file="GeneHancer_version_4-4_split.txt", sep="\t", quote=F, row.names=F, col.names=T)
+
  ###############
 # test interrogation: get genes associated with enhancers which intersect with H3K27ac ChIP-seq
 genehancer.H3K27ac.ChIP <- subsetByOverlaps(genehancer.split, H3K27ac.ChIP)
