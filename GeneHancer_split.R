@@ -16,7 +16,7 @@
 # download database via GeneCards: https://www.genecards.org/GeneHancer_version_4-4
 genehancer <- read.table("~/GeneHancer_version_4-4.txt", sep="\t", header=T)
 
-# prepare loop
+# prepare loop in increments of 1,000 enhancers
 iters <- ceiling(nrow(genehancer)/1000) # round up
 genehancer.split <- data.frame(chrom=NA, source=NA, feature.name=NA, start=NA, end=NA, score=NA, strand=NA, frame=NA,
                                genehancer_id=NA, connected_gene=NA, connected_gene_score=NA)
