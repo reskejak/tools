@@ -18,10 +18,8 @@
 genehancer <- read.table("/Users/jakereske/Google Drive/Chandler/public_datasets/GeneHancer_version_4-4.txt",
                          sep="\t", header=T)
 
-# prepare loop
+# loop in serial iterations of 1,000 rows
 iters <- ceiling(nrow(genehancer)/1000) # round up
-last.iter <- nrow(genehancer) - ((iters-1)*1000)
-# loop in serial iterations of 10,000 rows
 genehancer.split <- data.frame(chrom=NA, source=NA, feature.name=NA, start=NA, end=NA, score=NA, strand=NA, frame=NA,
                                genehancer_id=NA, connected_gene=NA, connected_gene_score=NA)
 for (n in 1:iters) {
