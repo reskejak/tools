@@ -41,8 +41,10 @@ for (n in 1:iters) {
                                            genehancer_id=strsplit(atts[1], split="=")[[1]][2], 
                                            connected_gene=strsplit(atts[-1][(1+((j-1)*2))], split="=")[[1]][2],
                                            connected_gene_score=strsplit(atts[-1][(2+((j-1)*2))], split="=")[[1]][2]))
+      genehancer.split.iter <- genehancer.split.iter[-1,] # remove initilization row
     }
   }
+  genehancer.split.iter <- genehancer.split.iter[-1,] # remove initilization row
   genehancer.split <- rbind(genehancer.split,
                             genehancer.split.iter)
 }
