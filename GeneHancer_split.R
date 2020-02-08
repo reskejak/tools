@@ -14,7 +14,6 @@
 
 # import GeneHancer (v4.4) database (n=218,177 enhancers)
 # download database via GeneCards: https://www.genecards.org/GeneHancer_version_4-4
-# import GeneHancer (v4.4) database
 genehancer <- read.table("/Users/jakereske/Google Drive/Chandler/public_datasets/GeneHancer_version_4-4.txt",
                          sep="\t", header=T)
 
