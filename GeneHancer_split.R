@@ -46,6 +46,9 @@ for (n in 1:iters) {
 genehancer.split <- genehancer.split[-1,] # remove initilization row
 # write.table(genehancer.split, file="GeneHancer_version_4-4_split.txt", sep="\t", quote=F, row.names=F, col.names=T)
 
+genehancer.split <- GRanges(genehancer.split) # make GRanges object
+# genehancer.split[!duplicated(genehancer.split)] # gut check: X unique ranges
+
  ###############
 # test interrogation: get genes associated with enhancers which intersect with H3K27ac ChIP-seq
 genehancer.H3K27ac.ChIP <- subsetByOverlaps(genehancer.split, H3K27ac.ChIP)
