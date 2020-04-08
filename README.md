@@ -1,7 +1,7 @@
 # tools
 Short scripts for various bioinformatics applications.
 
-#### Installation
+#### Installation for unix shell scripts
 
 1. Clone or copy raw code to text editor.
 2. Make executable, e.g. `chmod u+x removeChrom`.
