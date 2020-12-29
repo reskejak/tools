@@ -82,7 +82,8 @@ for (q in 1:length(reads)) {
       # retain only the top n signal-input regions as presence, where n is the lower # of binary presence calls between the two conditions
       # THIS IS THE MAGIC OF THE SCRIPT!
       if (is.na(binary1zn) | is.na(binary2zn)) { 
-        cat(paste0("\nNo calls for ", mark.z, ". Skipping"))
+        binary1new[,mark.z] <- 0
+        binary2new[,mark.z] <- 0
       } else if (binary1zn < binary2zn) {
         z2.rnk <- order(signal2.sub[,mark.z], decreasing=TRUE)
         binary2new[z2.rnk, mark.z][binary2new[z2.rnk, mark.z]==1][(binary1zn+1):binary2zn] <- 0
@@ -91,8 +92,9 @@ for (q in 1:length(reads)) {
         binary1new[z1.rnk, mark.z][binary1new[z1.rnk, mark.z]==1][(binary2zn+1):binary1zn] <- 0
       }
       # sanity check that lengths are same for 1-calls
-      if (is.na(binary1zn) | is.na(binary2zn)) { }
-      else if ( table(binary1new[,mark.z]==1)["TRUE"] == table(binary2new[,mark.z]==1)["TRUE"] ) {
+      if (is.na(binary1zn) | is.na(binary2zn) && table(binary1new[,mark.z]==0)["TRUE"] == nrow(binary1new) && table(binary2new[,mark.z]==0)["TRUE"] == nrow(binary2new)) {
+        cat(paste0("\n", mark.z, " was successfully normalized to 0 calls for ", chrs[i]))
+      } else if ( table(binary1new[,mark.z]==1)["TRUE"] == table(binary2new[,mark.z]==1)["TRUE"] ) {
         cat(paste0("\n", mark.z, " was successfully normalized to ", min(binary1zn, binary2zn), " calls for ", chrs[i]))
       } else { cat(paste("\nError! Number of", mark.z, "calls is not equivalent.")) }
     }
